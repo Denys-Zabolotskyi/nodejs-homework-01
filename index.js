@@ -40,23 +40,24 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
 // invokeAction({ action: 'list' });
 
-// invokeAction({ action: 'get', id: 'rsKkOQUi80UsgVPCcLZZW' });
+// invokeAction({ action: 'get', id: 'af51c393-b1a7-4060-9555-d8c5b027f0e5' });
+
 // invokeAction({
 //   action: 'add',
-//   name: 'Denys',
-//   email: 'denis@gmail.com',
-//   phone: '111-111-111',
+//   name: 'Denys Zabolotskyi',
+//   email: 'denis270323@gmail.com',
+//   phone: '(066)-254-11-11',
 // });
 
-invokeAction({
-  action: 'update',
-  id: 'af51c393 - b1a7 - 4060 - 9555 - d8c5b027f0e5',
-  name: 'Denys',
-  email: 'denis270323@gmail.com',
-  phone: '(099) 063-49-20',
-});
+// invokeAction({
+//   action: 'update',
+//   id: 'bb38aa0c-3782-4fa7-9a62-1c3a4578f4b8',
+//   name: 'Denys Zabolotskyi',
+//   email: 'denis270323@gmail.com',
+//   phone: '(063) 063-63-63',
+// });
 
 // invokeAction({
 //   action: 'remove',
-//   id: 'af51c393-b1a7-4060-9555-d8c5b027f0e5',
+//   id: 'bb38aa0c-3782-4fa7-9a62-1c3a4578f4b8',
 // });

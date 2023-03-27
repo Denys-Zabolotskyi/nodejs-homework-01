@@ -1,3 +1,14 @@
+const { program } = require('commander');
+program
+  .option('-a,--action <type>')
+  .option('-i, --id <type>', 'user id')
+  .option('-n, --name <type>', 'user name')
+  .option('-e, --email <type>', 'user email')
+  .option('-p, --phone <type>', 'user phone');
+
+program.parse();
+const options = program.opts();
+
 const {
   listContacts,
   getContactById,
@@ -10,7 +21,8 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case 'list':
       const allContacts = await listContacts();
-      console.log(allContacts);
+      console.table(allContacts);
+
       break;
     case 'get':
       const oneContact = await getContactById(id);
@@ -38,26 +50,4 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-// invokeAction({ action: 'list' });
-
-// invokeAction({ action: 'get', id: 'af51c393-b1a7-4060-9555-d8c5b027f0e5' });
-
-// invokeAction({
-//   action: 'add',
-//   name: 'Denys Zabolotskyi',
-//   email: 'denis270323@gmail.com',
-//   phone: '(066)-254-11-11',
-// });
-
-// invokeAction({
-//   action: 'update',
-//   id: 'bb38aa0c-3782-4fa7-9a62-1c3a4578f4b8',
-//   name: 'Denys Zabolotskyi',
-//   email: 'denis270323@gmail.com',
-//   phone: '(063) 063-63-63',
-// });
-
-// invokeAction({
-//   action: 'remove',
-//   id: 'bb38aa0c-3782-4fa7-9a62-1c3a4578f4b8',
-// });
+invokeAction(options);

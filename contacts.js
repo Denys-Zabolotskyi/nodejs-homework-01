@@ -34,13 +34,13 @@ const addContact = async ({ name, email, phone }) => {
   // ...твой код
 };
 
-const updateContactById = async (id, data) => {
+const updateContactById = async (contactId, data) => {
   const contacts = await listContacts();
-  const index = contacts.findIndex(contact => contact.id === id);
+  const index = contacts.findIndex(contact => contact.id === contactId);
   if (index === -1) {
     return null;
   }
-  contacts[index] = { id, ...data };
+  contacts[index] = { id: contactId, ...data };
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return contacts[index];
 };
